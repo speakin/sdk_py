@@ -73,6 +73,7 @@ class VoiceprintRegisterRequest(object):
     def app_name(self):
         """Gets the app_name of this VoiceprintRegisterRequest.  # noqa: E501
 
+        应用名字  # noqa: E501
 
         :return: The app_name of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class VoiceprintRegisterRequest(object):
     def app_name(self, app_name):
         """Sets the app_name of this VoiceprintRegisterRequest.
 
+        应用名字  # noqa: E501
 
         :param app_name: The app_name of this VoiceprintRegisterRequest.  # noqa: E501
         :type: str
@@ -96,6 +98,7 @@ class VoiceprintRegisterRequest(object):
     def replace(self):
         """Gets the replace of this VoiceprintRegisterRequest.  # noqa: E501
 
+        是否替换  # noqa: E501
 
         :return: The replace of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: bool
@@ -106,6 +109,7 @@ class VoiceprintRegisterRequest(object):
     def replace(self, replace):
         """Sets the replace of this VoiceprintRegisterRequest.
 
+        是否替换  # noqa: E501
 
         :param replace: The replace of this VoiceprintRegisterRequest.  # noqa: E501
         :type: bool
@@ -117,6 +121,7 @@ class VoiceprintRegisterRequest(object):
     def union_id(self):
         """Gets the union_id of this VoiceprintRegisterRequest.  # noqa: E501
 
+        union ID  # noqa: E501
 
         :return: The union_id of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: str
@@ -127,6 +132,7 @@ class VoiceprintRegisterRequest(object):
     def union_id(self, union_id):
         """Sets the union_id of this VoiceprintRegisterRequest.
 
+        union ID  # noqa: E501
 
         :param union_id: The union_id of this VoiceprintRegisterRequest.  # noqa: E501
         :type: str
@@ -140,6 +146,7 @@ class VoiceprintRegisterRequest(object):
     def urls(self):
         """Gets the urls of this VoiceprintRegisterRequest.  # noqa: E501
 
+        文件url数组  # noqa: E501
 
         :return: The urls of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: list[str]
@@ -150,6 +157,7 @@ class VoiceprintRegisterRequest(object):
     def urls(self, urls):
         """Sets the urls of this VoiceprintRegisterRequest.
 
+        文件url数组  # noqa: E501
 
         :param urls: The urls of this VoiceprintRegisterRequest.  # noqa: E501
         :type: list[str]
@@ -161,6 +169,7 @@ class VoiceprintRegisterRequest(object):
     def sampling_rate(self):
         """Gets the sampling_rate of this VoiceprintRegisterRequest.  # noqa: E501
 
+        sampling rate  # noqa: E501
 
         :return: The sampling_rate of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: str
@@ -171,6 +180,7 @@ class VoiceprintRegisterRequest(object):
     def sampling_rate(self, sampling_rate):
         """Sets the sampling_rate of this VoiceprintRegisterRequest.
 
+        sampling rate  # noqa: E501
 
         :param sampling_rate: The sampling_rate of this VoiceprintRegisterRequest.  # noqa: E501
         :type: str
@@ -184,6 +194,7 @@ class VoiceprintRegisterRequest(object):
     def timestamp(self):
         """Gets the timestamp of this VoiceprintRegisterRequest.  # noqa: E501
 
+        时间戳  # noqa: E501
 
         :return: The timestamp of this VoiceprintRegisterRequest.  # noqa: E501
         :rtype: int
@@ -194,6 +205,7 @@ class VoiceprintRegisterRequest(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this VoiceprintRegisterRequest.
 
+        时间戳  # noqa: E501
 
         :param timestamp: The timestamp of this VoiceprintRegisterRequest.  # noqa: E501
         :type: int

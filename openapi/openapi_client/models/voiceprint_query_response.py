@@ -52,6 +52,7 @@ class VoiceprintQueryResponse(object):
     def is_register(self):
         """Gets the is_register of this VoiceprintQueryResponse.  # noqa: E501
 
+        是否注册  # noqa: E501
 
         :return: The is_register of this VoiceprintQueryResponse.  # noqa: E501
         :rtype: bool
@@ -62,6 +63,7 @@ class VoiceprintQueryResponse(object):
     def is_register(self, is_register):
         """Sets the is_register of this VoiceprintQueryResponse.
 
+        是否注册  # noqa: E501
 
         :param is_register: The is_register of this VoiceprintQueryResponse.  # noqa: E501
         :type: bool

@@ -57,6 +57,7 @@ class UnionIDScore(object):
     def union_id(self):
         """Gets the union_id of this UnionIDScore.  # noqa: E501
 
+        union ID  # noqa: E501
 
         :return: The union_id of this UnionIDScore.  # noqa: E501
         :rtype: str
@@ -67,6 +68,7 @@ class UnionIDScore(object):
     def union_id(self, union_id):
         """Sets the union_id of this UnionIDScore.
 
+        union ID  # noqa: E501
 
         :param union_id: The union_id of this UnionIDScore.  # noqa: E501
         :type: str
@@ -78,6 +80,7 @@ class UnionIDScore(object):
     def score(self):
         """Gets the score of this UnionIDScore.  # noqa: E501
 
+        得分  # noqa: E501
 
         :return: The score of this UnionIDScore.  # noqa: E501
         :rtype: float
@@ -88,6 +91,7 @@ class UnionIDScore(object):
     def score(self, score):
         """Sets the score of this UnionIDScore.
 
+        得分  # noqa: E501
 
         :param score: The score of this UnionIDScore.  # noqa: E501
         :type: float

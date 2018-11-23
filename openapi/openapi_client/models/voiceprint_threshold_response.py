@@ -52,6 +52,7 @@ class VoiceprintThresholdResponse(object):
     def threshold(self):
         """Gets the threshold of this VoiceprintThresholdResponse.  # noqa: E501
 
+        阈值  # noqa: E501
 
         :return: The threshold of this VoiceprintThresholdResponse.  # noqa: E501
         :rtype: float
@@ -62,6 +63,7 @@ class VoiceprintThresholdResponse(object):
     def threshold(self, threshold):
         """Sets the threshold of this VoiceprintThresholdResponse.
 
+        阈值  # noqa: E501
 
         :param threshold: The threshold of this VoiceprintThresholdResponse.  # noqa: E501
         :type: float

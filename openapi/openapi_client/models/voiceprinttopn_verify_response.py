@@ -52,6 +52,7 @@ class VoiceprinttopnVerifyResponse(object):
     def scores(self):
         """Gets the scores of this VoiceprinttopnVerifyResponse.  # noqa: E501
 
+        topn排序  # noqa: E501
 
         :return: The scores of this VoiceprinttopnVerifyResponse.  # noqa: E501
         :rtype: list[UnionIDScore]
@@ -62,6 +63,7 @@ class VoiceprinttopnVerifyResponse(object):
     def scores(self, scores):
         """Sets the scores of this VoiceprinttopnVerifyResponse.
 
+        topn排序  # noqa: E501
 
         :param scores: The scores of this VoiceprinttopnVerifyResponse.  # noqa: E501
         :type: list[UnionIDScore]

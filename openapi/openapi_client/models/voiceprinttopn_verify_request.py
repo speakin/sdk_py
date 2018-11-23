@@ -33,7 +33,7 @@ class VoiceprinttopnVerifyRequest(object):
     """
     openapi_types = {
         'app_name': 'str',
-        'url': 'str',
+        'urls': 'list[str]',
         'sampling_rate': 'str',
         'topn': 'int',
         'timestamp': 'int'
@@ -41,24 +41,24 @@ class VoiceprinttopnVerifyRequest(object):
 
     attribute_map = {
         'app_name': 'appName',
-        'url': 'url',
+        'urls': 'urls',
         'sampling_rate': 'samplingRate',
         'topn': 'topn',
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, app_name=None, url=None, sampling_rate=None, topn=None, timestamp=None):  # noqa: E501
+    def __init__(self, app_name=None, urls=None, sampling_rate=None, topn=None, timestamp=None):  # noqa: E501
         """VoiceprinttopnVerifyRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._app_name = None
-        self._url = None
+        self._urls = None
         self._sampling_rate = None
         self._topn = None
         self._timestamp = None
         self.discriminator = None
 
         self.app_name = app_name
-        self.url = url
+        self.urls = urls
         self.sampling_rate = sampling_rate
         self.topn = topn
         self.timestamp = timestamp
@@ -67,6 +67,7 @@ class VoiceprinttopnVerifyRequest(object):
     def app_name(self):
         """Gets the app_name of this VoiceprinttopnVerifyRequest.  # noqa: E501
 
+        应用名字  # noqa: E501
 
         :return: The app_name of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :rtype: str
@@ -77,6 +78,7 @@ class VoiceprinttopnVerifyRequest(object):
     def app_name(self, app_name):
         """Sets the app_name of this VoiceprinttopnVerifyRequest.
 
+        应用名字  # noqa: E501
 
         :param app_name: The app_name of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :type: str
@@ -87,32 +89,35 @@ class VoiceprinttopnVerifyRequest(object):
         self._app_name = app_name
 
     @property
-    def url(self):
-        """Gets the url of this VoiceprinttopnVerifyRequest.  # noqa: E501
+    def urls(self):
+        """Gets the urls of this VoiceprinttopnVerifyRequest.  # noqa: E501
 
+        文件url  # noqa: E501
 
-        :return: The url of this VoiceprinttopnVerifyRequest.  # noqa: E501
-        :rtype: str
+        :return: The urls of this VoiceprinttopnVerifyRequest.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._url
+        return self._urls
 
-    @url.setter
-    def url(self, url):
-        """Sets the url of this VoiceprinttopnVerifyRequest.
+    @urls.setter
+    def urls(self, urls):
+        """Sets the urls of this VoiceprinttopnVerifyRequest.
 
+        文件url  # noqa: E501
 
-        :param url: The url of this VoiceprinttopnVerifyRequest.  # noqa: E501
-        :type: str
+        :param urls: The urls of this VoiceprinttopnVerifyRequest.  # noqa: E501
+        :type: list[str]
         """
-        if url is None:
-            raise ValueError("Invalid value for `url`, must not be `None`")  # noqa: E501
+        if urls is None:
+            raise ValueError("Invalid value for `urls`, must not be `None`")  # noqa: E501
 
-        self._url = url
+        self._urls = urls
 
     @property
     def sampling_rate(self):
         """Gets the sampling_rate of this VoiceprinttopnVerifyRequest.  # noqa: E501
 
+        sampling rate  # noqa: E501
 
         :return: The sampling_rate of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :rtype: str
@@ -123,6 +128,7 @@ class VoiceprinttopnVerifyRequest(object):
     def sampling_rate(self, sampling_rate):
         """Sets the sampling_rate of this VoiceprinttopnVerifyRequest.
 
+        sampling rate  # noqa: E501
 
         :param sampling_rate: The sampling_rate of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :type: str
@@ -136,6 +142,7 @@ class VoiceprinttopnVerifyRequest(object):
     def topn(self):
         """Gets the topn of this VoiceprinttopnVerifyRequest.  # noqa: E501
 
+        top n  # noqa: E501
 
         :return: The topn of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :rtype: int
@@ -146,6 +153,7 @@ class VoiceprinttopnVerifyRequest(object):
     def topn(self, topn):
         """Sets the topn of this VoiceprinttopnVerifyRequest.
 
+        top n  # noqa: E501
 
         :param topn: The topn of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :type: int
@@ -159,6 +167,7 @@ class VoiceprinttopnVerifyRequest(object):
     def timestamp(self):
         """Gets the timestamp of this VoiceprinttopnVerifyRequest.  # noqa: E501
 
+        时间戳  # noqa: E501
 
         :return: The timestamp of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :rtype: int
@@ -169,6 +178,7 @@ class VoiceprinttopnVerifyRequest(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this VoiceprinttopnVerifyRequest.
 
+        时间戳  # noqa: E501
 
         :param timestamp: The timestamp of this VoiceprinttopnVerifyRequest.  # noqa: E501
         :type: int

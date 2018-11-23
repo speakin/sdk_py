@@ -1,6 +1,6 @@
 # openapi_client.StorageApi
 
-All URIs are relative to *http://192.168.1.157:8888*
+All URIs are relative to *https://vpc.speakin.mobi*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,8 @@ Method | HTTP request | Description
 > file download(bucket, key)
 
 
+
+下载文件
 
 ### Example
 ```python
@@ -56,9 +58,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload**
-> CallUploadResponse upload(bucket, type, duration_ms, timestamp, body=body)
+> CallUploadResponse upload(bucket, type, timestamp, duration_ms=duration_ms, body=body)
 
 
+
+上传文件
 
 ### Example
 ```python
@@ -72,12 +76,12 @@ from pprint import pprint
 api_instance = openapi_client.StorageApi()
 bucket = 'bucket_example' # str | 
 type = wav # str | 
-duration_ms = 0 # int | 
 timestamp = 123 # int | 
-body = '/path/to/file' # file |  (optional)
+duration_ms = 0 # int |  (optional)
+body = '/path/to/file' # file | 上传文件 (optional)
 
 try:
-    api_response = api_instance.upload(bucket, type, duration_ms, timestamp, body=body)
+    api_response = api_instance.upload(bucket, type, timestamp, duration_ms=duration_ms, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StorageApi->upload: %s\n" % e)
@@ -89,9 +93,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket** | **str**|  | 
  **type** | **str**|  | 
- **duration_ms** | **int**|  | 
  **timestamp** | **int**|  | 
- **body** | **file**|  | [optional] 
+ **duration_ms** | **int**|  | [optional] 
+ **body** | **file**| 上传文件 | [optional] 
 
 ### Return type
 
@@ -103,7 +107,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/octet-stream
+ - **Content-Type**: application/octet-stream, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

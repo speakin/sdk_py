@@ -67,6 +67,7 @@ class Voiceprint1tonVerifyRequest(object):
     def app_name(self):
         """Gets the app_name of this Voiceprint1tonVerifyRequest.  # noqa: E501
 
+        应用名字  # noqa: E501
 
         :return: The app_name of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :rtype: str
@@ -77,6 +78,7 @@ class Voiceprint1tonVerifyRequest(object):
     def app_name(self, app_name):
         """Sets the app_name of this Voiceprint1tonVerifyRequest.
 
+        应用名字  # noqa: E501
 
         :param app_name: The app_name of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :type: str
@@ -90,6 +92,7 @@ class Voiceprint1tonVerifyRequest(object):
     def union_i_ds(self):
         """Gets the union_i_ds of this Voiceprint1tonVerifyRequest.  # noqa: E501
 
+        union IDs  # noqa: E501
 
         :return: The union_i_ds of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :rtype: list[str]
@@ -100,6 +103,7 @@ class Voiceprint1tonVerifyRequest(object):
     def union_i_ds(self, union_i_ds):
         """Sets the union_i_ds of this Voiceprint1tonVerifyRequest.
 
+        union IDs  # noqa: E501
 
         :param union_i_ds: The union_i_ds of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :type: list[str]
@@ -113,6 +117,7 @@ class Voiceprint1tonVerifyRequest(object):
     def url(self):
         """Gets the url of this Voiceprint1tonVerifyRequest.  # noqa: E501
 
+        文件url  # noqa: E501
 
         :return: The url of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :rtype: str
@@ -123,6 +128,7 @@ class Voiceprint1tonVerifyRequest(object):
     def url(self, url):
         """Sets the url of this Voiceprint1tonVerifyRequest.
 
+        文件url  # noqa: E501
 
         :param url: The url of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :type: str
@@ -136,6 +142,7 @@ class Voiceprint1tonVerifyRequest(object):
     def sampling_rate(self):
         """Gets the sampling_rate of this Voiceprint1tonVerifyRequest.  # noqa: E501
 
+        sampling rate  # noqa: E501
 
         :return: The sampling_rate of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :rtype: str
@@ -146,6 +153,7 @@ class Voiceprint1tonVerifyRequest(object):
     def sampling_rate(self, sampling_rate):
         """Sets the sampling_rate of this Voiceprint1tonVerifyRequest.
 
+        sampling rate  # noqa: E501
 
         :param sampling_rate: The sampling_rate of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :type: str
@@ -159,6 +167,7 @@ class Voiceprint1tonVerifyRequest(object):
     def timestamp(self):
         """Gets the timestamp of this Voiceprint1tonVerifyRequest.  # noqa: E501
 
+        时间戳  # noqa: E501
 
         :return: The timestamp of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :rtype: int
@@ -169,6 +178,7 @@ class Voiceprint1tonVerifyRequest(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this Voiceprint1tonVerifyRequest.
 
+        时间戳  # noqa: E501
 
         :param timestamp: The timestamp of this Voiceprint1tonVerifyRequest.  # noqa: E501
         :type: int

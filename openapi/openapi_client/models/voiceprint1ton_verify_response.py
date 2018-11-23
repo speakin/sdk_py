@@ -57,6 +57,7 @@ class Voiceprint1tonVerifyResponse(object):
     def union_id(self):
         """Gets the union_id of this Voiceprint1tonVerifyResponse.  # noqa: E501
 
+        union ID  # noqa: E501
 
         :return: The union_id of this Voiceprint1tonVerifyResponse.  # noqa: E501
         :rtype: str
@@ -67,6 +68,7 @@ class Voiceprint1tonVerifyResponse(object):
     def union_id(self, union_id):
         """Sets the union_id of this Voiceprint1tonVerifyResponse.
 
+        union ID  # noqa: E501
 
         :param union_id: The union_id of this Voiceprint1tonVerifyResponse.  # noqa: E501
         :type: str
@@ -78,6 +80,7 @@ class Voiceprint1tonVerifyResponse(object):
     def score(self):
         """Gets the score of this Voiceprint1tonVerifyResponse.  # noqa: E501
 
+        得分  # noqa: E501
 
         :return: The score of this Voiceprint1tonVerifyResponse.  # noqa: E501
         :rtype: float
@@ -88,6 +91,7 @@ class Voiceprint1tonVerifyResponse(object):
     def score(self, score):
         """Sets the score of this Voiceprint1tonVerifyResponse.
 
+        得分  # noqa: E501
 
         :param score: The score of this Voiceprint1tonVerifyResponse.  # noqa: E501
         :type: float

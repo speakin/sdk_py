@@ -33,9 +33,106 @@ class VoiceprintApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def ctcdasr(self, **kwargs):  # noqa: E501
+        """ctcdasr  # noqa: E501
+
+        数字asr  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ctcdasr(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintCtcdasrRequest voiceprint_ctcdasr_request:
+        :return: RespVoiceprintCtcdasrResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.ctcdasr_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.ctcdasr_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def ctcdasr_with_http_info(self, **kwargs):  # noqa: E501
+        """ctcdasr  # noqa: E501
+
+        数字asr  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ctcdasr_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintCtcdasrRequest voiceprint_ctcdasr_request:
+        :return: RespVoiceprintCtcdasrResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['voiceprint_ctcdasr_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method ctcdasr" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'voiceprint_ctcdasr_request' in local_var_params:
+            body_params = local_var_params['voiceprint_ctcdasr_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cloudapi/v1beta/voiceprint/ctcdasr', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RespVoiceprintCtcdasrResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete(self, **kwargs):  # noqa: E501
         """delete  # noqa: E501
 
+        声纹查询  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete(async_req=True)
@@ -57,6 +154,7 @@ class VoiceprintApi(object):
     def delete_with_http_info(self, **kwargs):  # noqa: E501
         """delete  # noqa: E501
 
+        声纹查询  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_with_http_info(async_req=True)
@@ -130,6 +228,7 @@ class VoiceprintApi(object):
     def query(self, **kwargs):  # noqa: E501
         """query  # noqa: E501
 
+        声纹查询  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.query(async_req=True)
@@ -151,6 +250,7 @@ class VoiceprintApi(object):
     def query_with_http_info(self, **kwargs):  # noqa: E501
         """query  # noqa: E501
 
+        声纹查询  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.query_with_http_info(async_req=True)
@@ -224,6 +324,7 @@ class VoiceprintApi(object):
     def register(self, **kwargs):  # noqa: E501
         """register  # noqa: E501
 
+        声纹注册  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.register(async_req=True)
@@ -245,6 +346,7 @@ class VoiceprintApi(object):
     def register_with_http_info(self, **kwargs):  # noqa: E501
         """register  # noqa: E501
 
+        声纹注册  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.register_with_http_info(async_req=True)
@@ -318,6 +420,7 @@ class VoiceprintApi(object):
     def threshold(self, **kwargs):  # noqa: E501
         """threshold  # noqa: E501
 
+        查询阈值  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.threshold(async_req=True)
@@ -339,6 +442,7 @@ class VoiceprintApi(object):
     def threshold_with_http_info(self, **kwargs):  # noqa: E501
         """threshold  # noqa: E501
 
+        查询阈值  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.threshold_with_http_info(async_req=True)
@@ -409,9 +513,106 @@ class VoiceprintApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def vadcheck(self, **kwargs):  # noqa: E501
+        """vadcheck  # noqa: E501
+
+        VAD检测  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.vadcheck(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintVadcheckRequest voiceprint_vadcheck_request:
+        :return: RespVoiceprintVadcheckResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.vadcheck_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.vadcheck_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def vadcheck_with_http_info(self, **kwargs):  # noqa: E501
+        """vadcheck  # noqa: E501
+
+        VAD检测  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.vadcheck_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintVadcheckRequest voiceprint_vadcheck_request:
+        :return: RespVoiceprintVadcheckResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['voiceprint_vadcheck_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method vadcheck" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'voiceprint_vadcheck_request' in local_var_params:
+            body_params = local_var_params['voiceprint_vadcheck_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cloudapi/v1beta/voiceprint/vadcheck', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RespVoiceprintVadcheckResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def verify(self, **kwargs):  # noqa: E501
         """verify  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verify(async_req=True)
@@ -433,6 +634,7 @@ class VoiceprintApi(object):
     def verify_with_http_info(self, **kwargs):  # noqa: E501
         """verify  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verify_with_http_info(async_req=True)
@@ -506,6 +708,7 @@ class VoiceprintApi(object):
     def verify1ton(self, **kwargs):  # noqa: E501
         """verify1ton  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verify1ton(async_req=True)
@@ -527,6 +730,7 @@ class VoiceprintApi(object):
     def verify1ton_with_http_info(self, **kwargs):  # noqa: E501
         """verify1ton  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verify1ton_with_http_info(async_req=True)
@@ -597,9 +801,106 @@ class VoiceprintApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def verify_multi(self, **kwargs):  # noqa: E501
+        """verify_multi  # noqa: E501
+
+        声纹验证1对多  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_multi(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintVerifyMultiRequest voiceprint_verify_multi_request:
+        :return: RespVoiceprintVerifyMultiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.verify_multi_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.verify_multi_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def verify_multi_with_http_info(self, **kwargs):  # noqa: E501
+        """verify_multi  # noqa: E501
+
+        声纹验证1对多  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_multi_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param VoiceprintVerifyMultiRequest voiceprint_verify_multi_request:
+        :return: RespVoiceprintVerifyMultiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['voiceprint_verify_multi_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method verify_multi" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'voiceprint_verify_multi_request' in local_var_params:
+            body_params = local_var_params['voiceprint_verify_multi_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cloudapi/v1beta/voiceprint/verify_multi', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RespVoiceprintVerifyMultiResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def verifytopn(self, **kwargs):  # noqa: E501
         """verifytopn  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verifytopn(async_req=True)
@@ -621,6 +922,7 @@ class VoiceprintApi(object):
     def verifytopn_with_http_info(self, **kwargs):  # noqa: E501
         """verifytopn  # noqa: E501
 
+        声纹验证  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.verifytopn_with_http_info(async_req=True)

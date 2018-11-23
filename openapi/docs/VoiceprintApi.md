@@ -1,22 +1,74 @@
 # openapi_client.VoiceprintApi
 
-All URIs are relative to *http://192.168.1.157:8888*
+All URIs are relative to *https://vpc.speakin.mobi*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ctcdasr**](VoiceprintApi.md#ctcdasr) | **POST** /cloudapi/v1beta/voiceprint/ctcdasr | 
 [**delete**](VoiceprintApi.md#delete) | **POST** /cloudapi/v1beta/voiceprint/delete | 
 [**query**](VoiceprintApi.md#query) | **POST** /cloudapi/v1beta/voiceprint/query | 
 [**register**](VoiceprintApi.md#register) | **POST** /cloudapi/v1beta/voiceprint/register | 
 [**threshold**](VoiceprintApi.md#threshold) | **POST** /cloudapi/v1beta/voiceprint/threshold | 
+[**vadcheck**](VoiceprintApi.md#vadcheck) | **POST** /cloudapi/v1beta/voiceprint/vadcheck | 
 [**verify**](VoiceprintApi.md#verify) | **POST** /cloudapi/v1beta/voiceprint/verify | 
 [**verify1ton**](VoiceprintApi.md#verify1ton) | **POST** /cloudapi/v1beta/voiceprint/verify1ton | 
+[**verify_multi**](VoiceprintApi.md#verify_multi) | **POST** /cloudapi/v1beta/voiceprint/verify_multi | 
 [**verifytopn**](VoiceprintApi.md#verifytopn) | **POST** /cloudapi/v1beta/voiceprint/verifytopn | 
 
+
+# **ctcdasr**
+> RespVoiceprintCtcdasrResponse ctcdasr(voiceprint_ctcdasr_request=voiceprint_ctcdasr_request)
+
+
+
+数字asr
+
+### Example
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = openapi_client.VoiceprintApi()
+voiceprint_ctcdasr_request = openapi_client.VoiceprintCtcdasrRequest() # VoiceprintCtcdasrRequest |  (optional)
+
+try:
+    api_response = api_instance.ctcdasr(voiceprint_ctcdasr_request=voiceprint_ctcdasr_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoiceprintApi->ctcdasr: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **voiceprint_ctcdasr_request** | [**VoiceprintCtcdasrRequest**](VoiceprintCtcdasrRequest.md)|  | [optional] 
+
+### Return type
+
+[**RespVoiceprintCtcdasrResponse**](RespVoiceprintCtcdasrResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete**
 > RespVoiceprintDeleteResponse delete(voiceprint_delete_request=voiceprint_delete_request)
 
 
+
+声纹查询
 
 ### Example
 ```python
@@ -63,6 +115,8 @@ No authorization required
 
 
 
+声纹查询
+
 ### Example
 ```python
 from __future__ import print_function
@@ -107,6 +161,8 @@ No authorization required
 > RespVoiceprintRegisterResponse register(voiceprint_register_request=voiceprint_register_request)
 
 
+
+声纹注册
 
 ### Example
 ```python
@@ -153,6 +209,8 @@ No authorization required
 
 
 
+查询阈值
+
 ### Example
 ```python
 from __future__ import print_function
@@ -193,10 +251,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **vadcheck**
+> RespVoiceprintVadcheckResponse vadcheck(voiceprint_vadcheck_request=voiceprint_vadcheck_request)
+
+
+
+VAD检测
+
+### Example
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = openapi_client.VoiceprintApi()
+voiceprint_vadcheck_request = openapi_client.VoiceprintVadcheckRequest() # VoiceprintVadcheckRequest |  (optional)
+
+try:
+    api_response = api_instance.vadcheck(voiceprint_vadcheck_request=voiceprint_vadcheck_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoiceprintApi->vadcheck: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **voiceprint_vadcheck_request** | [**VoiceprintVadcheckRequest**](VoiceprintVadcheckRequest.md)|  | [optional] 
+
+### Return type
+
+[**RespVoiceprintVadcheckResponse**](RespVoiceprintVadcheckResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **verify**
 > RespVoiceprintVerifyResponse verify(voiceprint_verify_request=voiceprint_verify_request)
 
 
+
+声纹验证
 
 ### Example
 ```python
@@ -243,6 +350,8 @@ No authorization required
 
 
 
+声纹验证
+
 ### Example
 ```python
 from __future__ import print_function
@@ -283,10 +392,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **verify_multi**
+> RespVoiceprintVerifyMultiResponse verify_multi(voiceprint_verify_multi_request=voiceprint_verify_multi_request)
+
+
+
+声纹验证1对多
+
+### Example
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = openapi_client.VoiceprintApi()
+voiceprint_verify_multi_request = openapi_client.VoiceprintVerifyMultiRequest() # VoiceprintVerifyMultiRequest |  (optional)
+
+try:
+    api_response = api_instance.verify_multi(voiceprint_verify_multi_request=voiceprint_verify_multi_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoiceprintApi->verify_multi: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **voiceprint_verify_multi_request** | [**VoiceprintVerifyMultiRequest**](VoiceprintVerifyMultiRequest.md)|  | [optional] 
+
+### Return type
+
+[**RespVoiceprintVerifyMultiResponse**](RespVoiceprintVerifyMultiResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **verifytopn**
 > RespVoiceprinttopnVerifyResponse verifytopn(voiceprinttopn_verify_request=voiceprinttopn_verify_request)
 
 
+
+声纹验证
 
 ### Example
 ```python

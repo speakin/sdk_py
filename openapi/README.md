@@ -66,35 +66,44 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://192.168.1.157:8888*
+All URIs are relative to *https://vpc.speakin.mobi*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *StorageApi* | [**download**](docs/StorageApi.md#download) | **GET** /cloudapi/v1beta/storage/download | 
 *StorageApi* | [**upload**](docs/StorageApi.md#upload) | **POST** /cloudapi/v1beta/storage/upload | 
+*VoiceprintApi* | [**ctcdasr**](docs/VoiceprintApi.md#ctcdasr) | **POST** /cloudapi/v1beta/voiceprint/ctcdasr | 
 *VoiceprintApi* | [**delete**](docs/VoiceprintApi.md#delete) | **POST** /cloudapi/v1beta/voiceprint/delete | 
 *VoiceprintApi* | [**query**](docs/VoiceprintApi.md#query) | **POST** /cloudapi/v1beta/voiceprint/query | 
 *VoiceprintApi* | [**register**](docs/VoiceprintApi.md#register) | **POST** /cloudapi/v1beta/voiceprint/register | 
 *VoiceprintApi* | [**threshold**](docs/VoiceprintApi.md#threshold) | **POST** /cloudapi/v1beta/voiceprint/threshold | 
+*VoiceprintApi* | [**vadcheck**](docs/VoiceprintApi.md#vadcheck) | **POST** /cloudapi/v1beta/voiceprint/vadcheck | 
 *VoiceprintApi* | [**verify**](docs/VoiceprintApi.md#verify) | **POST** /cloudapi/v1beta/voiceprint/verify | 
 *VoiceprintApi* | [**verify1ton**](docs/VoiceprintApi.md#verify1ton) | **POST** /cloudapi/v1beta/voiceprint/verify1ton | 
+*VoiceprintApi* | [**verify_multi**](docs/VoiceprintApi.md#verify_multi) | **POST** /cloudapi/v1beta/voiceprint/verify_multi | 
 *VoiceprintApi* | [**verifytopn**](docs/VoiceprintApi.md#verifytopn) | **POST** /cloudapi/v1beta/voiceprint/verifytopn | 
 
 
 ## Documentation For Models
 
+ - [Body](docs/Body.md)
  - [CallUploadResponse](docs/CallUploadResponse.md)
  - [RespVoiceprint1tonVerifyResponse](docs/RespVoiceprint1tonVerifyResponse.md)
+ - [RespVoiceprintCtcdasrResponse](docs/RespVoiceprintCtcdasrResponse.md)
  - [RespVoiceprintDeleteResponse](docs/RespVoiceprintDeleteResponse.md)
  - [RespVoiceprintQueryResponse](docs/RespVoiceprintQueryResponse.md)
  - [RespVoiceprintRegisterResponse](docs/RespVoiceprintRegisterResponse.md)
  - [RespVoiceprintThresholdResponse](docs/RespVoiceprintThresholdResponse.md)
+ - [RespVoiceprintVadcheckResponse](docs/RespVoiceprintVadcheckResponse.md)
+ - [RespVoiceprintVerifyMultiResponse](docs/RespVoiceprintVerifyMultiResponse.md)
  - [RespVoiceprintVerifyResponse](docs/RespVoiceprintVerifyResponse.md)
  - [RespVoiceprinttopnVerifyResponse](docs/RespVoiceprinttopnVerifyResponse.md)
  - [UnionIDScore](docs/UnionIDScore.md)
  - [UploadResponse](docs/UploadResponse.md)
  - [Voiceprint1tonVerifyRequest](docs/Voiceprint1tonVerifyRequest.md)
  - [Voiceprint1tonVerifyResponse](docs/Voiceprint1tonVerifyResponse.md)
+ - [VoiceprintCtcdasrRequest](docs/VoiceprintCtcdasrRequest.md)
+ - [VoiceprintCtcdasrResponse](docs/VoiceprintCtcdasrResponse.md)
  - [VoiceprintDeleteRequest](docs/VoiceprintDeleteRequest.md)
  - [VoiceprintDeleteResponse](docs/VoiceprintDeleteResponse.md)
  - [VoiceprintQueryRequest](docs/VoiceprintQueryRequest.md)
@@ -103,6 +112,11 @@ Class | Method | HTTP request | Description
  - [VoiceprintRegisterResponse](docs/VoiceprintRegisterResponse.md)
  - [VoiceprintThresholdRequest](docs/VoiceprintThresholdRequest.md)
  - [VoiceprintThresholdResponse](docs/VoiceprintThresholdResponse.md)
+ - [VoiceprintVadcheckRequest](docs/VoiceprintVadcheckRequest.md)
+ - [VoiceprintVadcheckResponse](docs/VoiceprintVadcheckResponse.md)
+ - [VoiceprintVerifyMultiReport](docs/VoiceprintVerifyMultiReport.md)
+ - [VoiceprintVerifyMultiRequest](docs/VoiceprintVerifyMultiRequest.md)
+ - [VoiceprintVerifyMultiResponse](docs/VoiceprintVerifyMultiResponse.md)
  - [VoiceprintVerifyRequest](docs/VoiceprintVerifyRequest.md)
  - [VoiceprintVerifyResponse](docs/VoiceprintVerifyResponse.md)
  - [VoiceprinttopnVerifyRequest](docs/VoiceprinttopnVerifyRequest.md)

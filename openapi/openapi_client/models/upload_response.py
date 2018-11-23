@@ -52,6 +52,7 @@ class UploadResponse(object):
     def key(self):
         """Gets the key of this UploadResponse.  # noqa: E501
 
+        文件key  # noqa: E501
 
         :return: The key of this UploadResponse.  # noqa: E501
         :rtype: str
@@ -62,6 +63,7 @@ class UploadResponse(object):
     def key(self, key):
         """Sets the key of this UploadResponse.
 
+        文件key  # noqa: E501
 
         :param key: The key of this UploadResponse.  # noqa: E501
         :type: str

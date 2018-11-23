@@ -59,6 +59,7 @@ class VoiceprintDeleteRequest(object):
     def app_name(self):
         """Gets the app_name of this VoiceprintDeleteRequest.  # noqa: E501
 
+        应用名字  # noqa: E501
 
         :return: The app_name of this VoiceprintDeleteRequest.  # noqa: E501
         :rtype: str
@@ -69,6 +70,7 @@ class VoiceprintDeleteRequest(object):
     def app_name(self, app_name):
         """Sets the app_name of this VoiceprintDeleteRequest.
 
+        应用名字  # noqa: E501
 
         :param app_name: The app_name of this VoiceprintDeleteRequest.  # noqa: E501
         :type: str
@@ -82,6 +84,7 @@ class VoiceprintDeleteRequest(object):
     def union_id(self):
         """Gets the union_id of this VoiceprintDeleteRequest.  # noqa: E501
 
+        union ID  # noqa: E501
 
         :return: The union_id of this VoiceprintDeleteRequest.  # noqa: E501
         :rtype: str
@@ -92,6 +95,7 @@ class VoiceprintDeleteRequest(object):
     def union_id(self, union_id):
         """Sets the union_id of this VoiceprintDeleteRequest.
 
+        union ID  # noqa: E501
 
         :param union_id: The union_id of this VoiceprintDeleteRequest.  # noqa: E501
         :type: str
@@ -105,6 +109,7 @@ class VoiceprintDeleteRequest(object):
     def timestamp(self):
         """Gets the timestamp of this VoiceprintDeleteRequest.  # noqa: E501
 
+        时间戳（以秒为单位）  # noqa: E501
 
         :return: The timestamp of this VoiceprintDeleteRequest.  # noqa: E501
         :rtype: int
@@ -115,6 +120,7 @@ class VoiceprintDeleteRequest(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this VoiceprintDeleteRequest.
 
+        时间戳（以秒为单位）  # noqa: E501
 
         :param timestamp: The timestamp of this VoiceprintDeleteRequest.  # noqa: E501
         :type: int

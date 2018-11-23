@@ -36,6 +36,7 @@ class StorageApi(object):
     def download(self, bucket, key, **kwargs):  # noqa: E501
         """download  # noqa: E501
 
+        下载文件  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download(bucket, key, async_req=True)
@@ -58,6 +59,7 @@ class StorageApi(object):
     def download_with_http_info(self, bucket, key, **kwargs):  # noqa: E501
         """download  # noqa: E501
 
+        下载文件  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.download_with_http_info(bucket, key, async_req=True)
@@ -135,45 +137,47 @@ class StorageApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload(self, bucket, type, duration_ms, timestamp, **kwargs):  # noqa: E501
+    def upload(self, bucket, type, timestamp, **kwargs):  # noqa: E501
         """upload  # noqa: E501
 
+        上传文件  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload(bucket, type, duration_ms, timestamp, async_req=True)
+        >>> thread = api.upload(bucket, type, timestamp, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bucket: (required)
         :param str type: (required)
-        :param int duration_ms: (required)
         :param int timestamp: (required)
-        :param file body:
+        :param int duration_ms:
+        :param file body: 上传文件
         :return: CallUploadResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.upload_with_http_info(bucket, type, duration_ms, timestamp, **kwargs)  # noqa: E501
+            return self.upload_with_http_info(bucket, type, timestamp, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_with_http_info(bucket, type, duration_ms, timestamp, **kwargs)  # noqa: E501
+            (data) = self.upload_with_http_info(bucket, type, timestamp, **kwargs)  # noqa: E501
             return data
 
-    def upload_with_http_info(self, bucket, type, duration_ms, timestamp, **kwargs):  # noqa: E501
+    def upload_with_http_info(self, bucket, type, timestamp, **kwargs):  # noqa: E501
         """upload  # noqa: E501
 
+        上传文件  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload_with_http_info(bucket, type, duration_ms, timestamp, async_req=True)
+        >>> thread = api.upload_with_http_info(bucket, type, timestamp, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str bucket: (required)
         :param str type: (required)
-        :param int duration_ms: (required)
         :param int timestamp: (required)
-        :param file body:
+        :param int duration_ms:
+        :param file body: 上传文件
         :return: CallUploadResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -181,7 +185,7 @@ class StorageApi(object):
 
         local_var_params = locals()
 
-        all_params = ['bucket', 'type', 'duration_ms', 'timestamp', 'body']  # noqa: E501
+        all_params = ['bucket', 'type', 'timestamp', 'duration_ms', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -203,10 +207,6 @@ class StorageApi(object):
         if ('type' not in local_var_params or
                 local_var_params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `upload`")  # noqa: E501
-        # verify the required parameter 'duration_ms' is set
-        if ('duration_ms' not in local_var_params or
-                local_var_params['duration_ms'] is None):
-            raise ValueError("Missing the required parameter `duration_ms` when calling `upload`")  # noqa: E501
         # verify the required parameter 'timestamp' is set
         if ('timestamp' not in local_var_params or
                 local_var_params['timestamp'] is None):
@@ -240,7 +240,7 @@ class StorageApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/octet-stream'])  # noqa: E501
+            ['application/octet-stream', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501

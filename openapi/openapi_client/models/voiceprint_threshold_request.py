@@ -55,6 +55,7 @@ class VoiceprintThresholdRequest(object):
     def app_name(self):
         """Gets the app_name of this VoiceprintThresholdRequest.  # noqa: E501
 
+        应用名字  # noqa: E501
 
         :return: The app_name of this VoiceprintThresholdRequest.  # noqa: E501
         :rtype: str
@@ -65,6 +66,7 @@ class VoiceprintThresholdRequest(object):
     def app_name(self, app_name):
         """Sets the app_name of this VoiceprintThresholdRequest.
 
+        应用名字  # noqa: E501
 
         :param app_name: The app_name of this VoiceprintThresholdRequest.  # noqa: E501
         :type: str
@@ -78,6 +80,7 @@ class VoiceprintThresholdRequest(object):
     def timestamp(self):
         """Gets the timestamp of this VoiceprintThresholdRequest.  # noqa: E501
 
+        时间戳（以秒为单位）  # noqa: E501
 
         :return: The timestamp of this VoiceprintThresholdRequest.  # noqa: E501
         :rtype: int
@@ -88,6 +91,7 @@ class VoiceprintThresholdRequest(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this VoiceprintThresholdRequest.
 
+        时间戳（以秒为单位）  # noqa: E501
 
         :param timestamp: The timestamp of this VoiceprintThresholdRequest.  # noqa: E501
         :type: int

@@ -52,6 +52,7 @@ class VoiceprintVerifyResponse(object):
     def score(self):
         """Gets the score of this VoiceprintVerifyResponse.  # noqa: E501
 
+        声纹得分  # noqa: E501
 
         :return: The score of this VoiceprintVerifyResponse.  # noqa: E501
         :rtype: float
@@ -62,6 +63,7 @@ class VoiceprintVerifyResponse(object):
     def score(self, score):
         """Sets the score of this VoiceprintVerifyResponse.
 
+        声纹得分  # noqa: E501
 
         :param score: The score of this VoiceprintVerifyResponse.  # noqa: E501
         :type: float
