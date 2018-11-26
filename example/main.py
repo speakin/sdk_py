@@ -1,36 +1,40 @@
 import time
-import json
-import base64
 
 import openapi_client
 from tok import ApiTokenMiddleware, BucketTokenMiddleware
-from config import config, config_digital
-# create an instance of the API class
+#  from config import config
+from c import config
 
-
-conf=config
-#conf=config_digital
+conf = config
 configuration = openapi_client.Configuration()
-#configuration.host = "http://localhost:8888"
+
+# TODO
+configuration.host = 'http://192.168.0.91:8888'
 
 
-api_client = openapi_client.ApiClient(configuration=configuration)
-pool = api_client.rest_client.pool_manager
-api_client.rest_client.pool_manager = ApiTokenMiddleware(
-    pool,
-    conf["app"]["accessKey"],
-    conf["app"]["secretKey"],
-)
-voiceprint_api = openapi_client.VoiceprintApi(api_client=api_client)
+def get_voiceprint_cli(access_key, secret_key):
+    api_client = openapi_client.ApiClient(configuration=configuration)
+    pool = api_client.rest_client.pool_manager
+    api_client.rest_client.pool_manager = ApiTokenMiddleware(
+        pool, access_key, secret_key)
+    return openapi_client.VoiceprintApi(api_client=api_client)
 
-api_client = openapi_client.ApiClient(configuration=configuration)
-pool = api_client.rest_client.pool_manager
-api_client.rest_client.pool_manager = BucketTokenMiddleware(
-    pool,
-    conf["bucket"]["accessKey"],
-    conf["bucket"]["secretKey"],
-)
-storage_api = openapi_client.StorageApi(api_client=api_client)
+
+voiceprint_api = get_voiceprint_cli(conf['app']['accessKey'],
+                                    conf['app']['secretKey'])
+
+
+def get_storage_cli(access_key, secret_key):
+    api_client = openapi_client.ApiClient(configuration=configuration)
+    pool = api_client.rest_client.pool_manager
+    api_client.rest_client.pool_manager = BucketTokenMiddleware(
+        pool, access_key, secret_key)
+    return openapi_client.StorageApi(api_client=api_client)
+
+
+storage_api = get_storage_cli(conf['bucket']['accessKey'],
+                              conf['bucket']['secretKey'])
+
 
 def query_threshold(app_name):
     req = openapi_client.VoiceprintThresholdRequest(
@@ -43,6 +47,10 @@ def query_threshold(app_name):
     return resp.data.threshold
 
 
+def upload_file(filename):
+    return upload_files([filename])[0]
+
+
 def upload_files(filenames):
     keys = []
     for name in filenames:
@@ -50,8 +58,8 @@ def upload_files(filenames):
         f = open(name, 'rb')
         content = f.read()
         f.close()
-        resp = storage_api.upload(conf["bucket"]["name"], "wav", 0, ts, **{
-            "body": content,
+        resp = storage_api.upload(conf['bucket']['name'], 'wav', 0, ts, **{
+            'body': content,
         })
         if resp.has_error:
             raise Exception(resp)
@@ -87,10 +95,6 @@ def verify(app_name, union_id, key, simpleRate):
     return resp.data.score
 
 
-def upload_file(filename):
-    return upload_files([filename])[0]
-
-
 def query(app_name, union_id):
     req = openapi_client.VoiceprintQueryRequest(
         app_name=app_name,
@@ -104,27 +108,30 @@ def query(app_name, union_id):
     return resp.data.is_register
 
 
-try:
-    # 查询阈值
-    threshold = query_threshold(conf["app"]["name"])
-    print("threshold:", threshold)
-    # 查询
-    is_register = query(conf["app"]["name"], conf["unionID"])
-    print("is_register:", is_register)
-    # 上传注册文件
-    keys = upload_files(conf["registerFiles"])
-    print("register keys:", keys)
-    # 注册
-    register(conf["app"]["name"], conf["unionID"], keys, conf["simpleRate"])
-    # 查询
-    is_register = query(conf["app"]["name"], conf["unionID"])
-    print("is_register:", is_register)
-    # 上传验证文件
-    key = upload_file(conf["verifyFile"])
-    print("verify key:", key)
-    # 验证
-    score = verify(conf["app"]["name"], conf["unionID"], key, conf["simpleRate"])
-    print("score:", score)
+if __name__ == '__main__':
+    try:
+        # 查询阈值
+        threshold = query_threshold(conf['app']['name'])
+        print('threshold:', threshold)
+        # 查询
+        is_register = query(conf['app']['name'], conf['unionID'])
+        print('is_register:', is_register)
+        # 上传注册文件
+        keys = upload_files(conf['registerFiles'])
+        print('register keys:', keys)
+        # 注册
+        register(conf['app']['name'], conf['unionID'], keys,
+                 conf['simpleRate'])
+        # 查询
+        is_register = query(conf['app']['name'], conf['unionID'])
+        print('is_register:', is_register)
+        # 上传验证文件
+        key = upload_file(conf['verifyFile'])
+        print('verify key:', key)
+        # 验证
+        score = verify(conf['app']['name'], conf['unionID'], key,
+                       conf['simpleRate'])
+        print('score:', score)
 
-except BaseException as e:
-    print("Exception when calling %s\n" % e)
+    except Exception as e:
+        print('Exception when calling %s\n' % e)
