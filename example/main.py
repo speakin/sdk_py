@@ -104,7 +104,7 @@ def query(app_name, union_id):
     return resp.data.is_register
 
 
-if __name__ == '__main__':
+def main():
     try:
         # 查询阈值
         threshold = query_threshold(conf['app']['name'])
@@ -130,4 +130,8 @@ if __name__ == '__main__':
         print('score:', score)
 
     except Exception as e:
-        print('Exception when calling %s\n' % e)
+        print('Exception when calling %s' % e)
+
+
+if __name__ == '__main__':
+    main()
