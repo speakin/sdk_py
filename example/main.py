@@ -2,14 +2,10 @@ import time
 
 import openapi_client
 from tok import ApiTokenMiddleware, BucketTokenMiddleware
-#  from config import config
-from c import config
+from config import config
 
 conf = config
 configuration = openapi_client.Configuration()
-
-# TODO
-configuration.host = 'http://192.168.0.91:8888'
 
 
 def get_voiceprint_cli(access_key, secret_key):
@@ -58,7 +54,7 @@ def upload_files(filenames):
         f = open(name, 'rb')
         content = f.read()
         f.close()
-        resp = storage_api.upload(conf['bucket']['name'], 'wav', 0, ts, **{
+        resp = storage_api.upload(conf['bucket']['name'], 'wav', ts, **{
             'body': content,
         })
         if resp.has_error:
